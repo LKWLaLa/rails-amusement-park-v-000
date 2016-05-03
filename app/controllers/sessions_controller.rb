@@ -1,11 +1,13 @@
 class SessionsController < ApplicationController
 
   def new
+    @user = User.new
   end
 
   def create
-    if @user = User.find_by(name: params[:name])
+    if @user = User.find_by(id: params[:user][:id])
       session[:user_id] = @user.id  
+      redirect_to user_path(@user)
     else
       redirect_to :new, alert: "Please enter a valid user name, or create an account."
     end

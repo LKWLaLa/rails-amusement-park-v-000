@@ -1,0 +1,4 @@
+<% if current_user.admin %>
+    <h3>New Attraction:</h3>
+    <%= render 'form', attraction: @attraction %>
+    <% end %>

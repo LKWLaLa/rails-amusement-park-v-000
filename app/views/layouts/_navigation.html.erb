@@ -1,8 +1,9 @@
 <%if !logged_in?%>
-<%=link_to "Sign up", new_user_path%>
+<%=link_to "Sign up", new_user_path%><br>
 <%=link_to "Sign in", signin_path%>
 
 <%else%>
-<%=link_to "Sign out", signout_path, :method => :delete%>
-<%=link_to "Home", root_path%>
+<%=link_to "Log Out", signout_path, :method => :delete%><br>
+<%=link_to "Home", root_path%><br><br>
+<%=link_to "See attractions", attractions_path%><br><br>
 <%end%>
